@@ -1,0 +1,25 @@
+<ion-view view-title="Dashboard">
+    <ion-content class="padding">
+        <div id="MessageSection">
+            <div id="recipientSection">
+                To:
+                <input id="recipientText" type="textbox" placeholder="Recipient Phone #" ng-model="message.recipient" required/>
+            </div>
+            <div class="card" ng-repeat="sentMessage in message.sentMessages">
+              <div class="item item-text-wrap">
+                {{sentMessage}}
+              </div>
+            </div>
+
+
+            <div id="messageInputSection">
+                <div>Message:
+                    <div>
+                        <textarea id="textInput" ng-model="message.text" placeholder="Type Message Here..." required></textarea>
+                        <input type="button" ng-click="sendMessage()" class="btn btn-danger" value="Send"></input>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

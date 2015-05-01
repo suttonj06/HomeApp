@@ -1,0 +1,27 @@
+<ion-view view-title="Dashboard">
+<ion-content class="padding">
+<!--<div ng-include="'components/navbar/navbar.html'"></div> -->
+
+<div class="clock">{{theclock}}</div>
+
+<div digital-clock></div>
+
+<div class="weather">
+	<div ng-controller="HomeTodayCtrl as HomeTodayCtrl">
+		<div>
+			<h4>
+				<i></i> Weather in <span>{{city}}</span>
+			</h4>
+		</div>
+		<div class="widget-body">
+			<div ng-repeat="day in everyday">
+				<div>{{day.weekday}}</div>
+				<div><img src="{{day.image}}"></div>
+				<p>High of <span>{{day.high_f}}</span>°F and a low of <span>{{day.low_f}}</span>°F with <span>{{day.description}}</span></p>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</ion-content>
+</ion-view>
